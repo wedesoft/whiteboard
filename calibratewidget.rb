@@ -31,7 +31,7 @@ class CalibrateWidget < Qt::Widget
   def keyPressEvent(e)
     if e.key == Qt::Key_Escape
       emit aborted
-      close
+      hide
     end
   end
   def add_point(x, y)
@@ -42,7 +42,7 @@ class CalibrateWidget < Qt::Widget
       update
     else
       emit finished
-      close
+      hide
     end
   end
 end
