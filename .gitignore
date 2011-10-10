@@ -1,4 +1,8 @@
 .*.un~
+*.o
+*.so
 .*.swp
+qrc_*.rb
+ui_*.rb
 whiteboard.tar.bz2
 

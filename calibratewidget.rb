@@ -13,7 +13,7 @@ class CalibrateWidget < Qt::Widget
     @point_pairs = []
   end
   def marker
-    [@id[0] == 1 ? width - SIZE : SIZE, @id[1] == 1 ? height - SIZE : SIZE]
+    [@id[0] == 1 ? width * 3 / 4 : width / 4, @id[1] == 1 ? height * 3 / 4: height / 4]
   end
   def paintEvent(e)
     super e
