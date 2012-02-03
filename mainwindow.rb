@@ -113,6 +113,7 @@ EOS
     flags |= Qt::DialogType
     flags |= Qt::FramelessWindowHint
     @calibration.windowFlags = flags
+    # @calibration.setWindowFlags(Qt::FramelessWindowHint || Qt::DialogType)
     @calibration.cursor = Qt::Cursor.new Qt::BlankCursor
     connect @ui.action_quit, SIGNAL('triggered()'), self, SLOT('close()')
     connect self, SIGNAL('ir_clicked(int,int)'), @calibration, SLOT('add_point(int,int)')
