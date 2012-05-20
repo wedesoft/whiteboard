@@ -108,12 +108,13 @@ EOS
   end
   def calibrate
     @homography = nil
-    @calibration = CalibrateWidget.new self
+    @calibration = CalibrateWidget.new
     flags = Qt::Enum.new 0, 'Qt::WindowFlags'
-    flags |= Qt::DialogType
-    flags |= Qt::FramelessWindowHint
-    @calibration.windowFlags = flags
-    # @calibration.setWindowFlags(Qt::FramelessWindowHint || Qt::DialogType)
+    #flags |= Qt::DialogType
+    #flags |= Qt::FramelessWindowHint
+    #@calibration.windowFlags = flags
+    #@calibration.setWindowFlags(Qt::FramelessWindowHint || Qt::DialogType)
+    @calibration.setWindowFlags(Qt::FramelessWindowHint || Qt::DialogType)
     @calibration.cursor = Qt::Cursor.new Qt::BlankCursor
     connect @ui.action_quit, SIGNAL('triggered()'), self, SLOT('close()')
     connect self, SIGNAL('ir_clicked(int,int)'), @calibration, SLOT('add_point(int,int)')
